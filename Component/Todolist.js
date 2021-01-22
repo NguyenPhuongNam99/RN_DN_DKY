@@ -86,7 +86,7 @@ const Todolist= (props)=>{
                         renderItem={({ item }) => (
 
                             item.isChecked && (
-                                <Text style={{ color: color, fontSize: size ,marginLeft:10,color:'#000000'}}>{item.text}</Text>
+                                <Text style={{ color: color, fontSize: size ,marginLeft:10}}>{item.text}</Text>
                             )
 
 
@@ -150,9 +150,9 @@ const styles =StyleSheet.create({
       buttonad:{
         width:94,height:42,color:'#fff',backgroundColor:'#BD2B26',textAlign:'center',paddingTop:8,
         fontWeight:'400',marginTop:20,color:'#FFFFFF',borderRadius:9
-      },
-      check:{
-          marginLeft:10
-      }
+       },
+      // check:{
+      //     marginLeft:10
+      // }
 })
 export default Todolist;

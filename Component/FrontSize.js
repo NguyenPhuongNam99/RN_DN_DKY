@@ -27,7 +27,7 @@ const FrontSize = (props)=>{
       }
   }
   // const size = props.size;
-
+ 
 const handleChooseSize=props.handleChooseSize;
     return(
         <View style={styles.right}>

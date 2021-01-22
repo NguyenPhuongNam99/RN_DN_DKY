@@ -29,17 +29,18 @@ import Profile from './Component/Profile';
 import Detail_Profile from './Component/Detail_Profile';
 
 import {Main_Header, Profile_User} from './StackNavigation';
-import DrawNavigation from './DrawNavigation';
-import TabNavigator from './TabNavigator';
-const App = ()=>{
+
+const Tab = createBottomTabNavigator();
+const TabNavigator = ()=>{
   return (
-      <NavigationContainer>
-        <DrawNavigation />
-      </NavigationContainer>
+      <Tab.Navigator >
+        <Tab.Screen name ="Home" component={Main_Header} options={{tabBarIcon:()=><FontAwesome name='home' size={30 } style={{color:'red'}} />}} />
+        <Tab.Screen name= "Contact" component={Profile_User} options={{tabBarIcon:()=><FontAwesome name='user' size={30 } style={{color:'red'}} />}}/>
+      </Tab.Navigator>
   )
 }
 const styles = StyleSheet.create({
  
 });
 
-export default App;
+export default TabNavigator;

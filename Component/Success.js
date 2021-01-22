@@ -5,10 +5,11 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 export default function Success(props){
     return (
+        
         <View style={styles.logo}>
-           
-            <Image style={styles.tinyLogo}
+           <Image style={styles.tinyLogo}
         source={{uri:'https://cdn0.iconfinder.com/data/icons/basic-7/97/20-512.png'}}/>
+          
         <Text style={styles.text}>You have successfully fixed the color and font size.</Text>
         <TouchableOpacity
         style={styles.button}
