@@ -1,15 +1,44 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {
     SafeAreaView,
     StyleSheet,
     ScrollView,
     View,
     Text,
-    StatusBar, TouchableOpacity, TextInput
+    StatusBar, TouchableOpacity, TextInput, Alert
 } from 'react-native';
+import { Value } from 'react-native-reanimated';
 // import {  } from 'react-native-gesture-handler';
-const Dangnhap = () => {
+const Dangnhap = ({navigation}) => {
 
+    const [check,setCheck] = useState('');
+    const onchange= (text)=>{
+        setCheck(text);
+    }
+    const ch= ()=>{
+        if(check.length >7 &&checkok.length >7){
+            navigation.navigate('Office')
+            return true;
+        }
+        else{
+            Alert.alert('dang nhap khong thanh cong')
+            return false;
+        }
+    }
+    const [checkok,setCheckok] = useState('');
+    const onchangeok= (text)=>{
+        setCheckok(text);
+    }
+    // const chok= ()=>{
+    //     if(checkok.length() > 7){
+    //         navigation.navigate('Profile')
+    //         return true;
+    //     }
+    //     else{
+    //         Alert.alert('dang nhap khong thanh cong')
+    //         return false;
+    //     }
+    // }
     return (
 
         <View style={{ flex: 1 }}>
@@ -21,16 +50,29 @@ const Dangnhap = () => {
 
                 <Text style={styles.Header_title}>ĐĂNG NHẬP</Text>
                 <Text style={styles.info}>Số điện thoại</Text>
-                <TextInput placeholder='textinput' textContentType='familyName' returnKeyType='next' style={styles.input} />
-                {/* <Text style={styles.info}>Số điện thoại</Text>
-                <TextInput placeholder='textinput'textContentType='familyName' returnKeyType='next' style={styles.input}/> */}
+                <TextInput placeholder='textinput' textContentType='familyName'
+                 returnKeyType='next' 
+                 style={styles.input}
+                onChangeText={(text)=>onchangeok(text)}
+                 />
+               
                 <Text style={styles.Pass}>Mật Khẩu</Text>
-                <TextInput placeholder='textinput' secureTextEntry={true} textContentType='password' returnKeyType='next' style={styles.input} />
+                <TextInput placeholder='textinput' secureTextEntry={true} textContentType='password' 
+                    returnKeyType='next' 
+                    style={styles.input}
+                    onChangeText={(text)=>onchange(text)
+                   
+                    }
+                    />
                 <Text style={{ color: '#3784FF', margin: 13 }}>Quên mật khẩu</Text>
-                <TouchableOpacity style={styles.Dn}>
+                {
+                    ch ?
+                    <TouchableOpacity style={styles.Dn} onPress={ch}>
                     <Text style={styles.Text}>Đăng Nhập</Text>
                 </TouchableOpacity>
-
+                    :Alert.alert('that bai')
+                }
+                
             </View>
             <View style={styles.footer}>
                 <Text>Bạn chưa có tài khoản ?</Text>

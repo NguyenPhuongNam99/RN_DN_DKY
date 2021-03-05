@@ -28,7 +28,8 @@ import Screen3 from './Component/Screen3';
 import Profile from './Component/Profile';
 import Detail_Profile from './Component/Detail_Profile';
 import Dangnhap from './Component/Dangnhap';
-
+import Draw_Deatil_Profile from './Component/Draw_Deatil_Profile';
+import DrawerContent from './Component/DrawerContent';
 const NavigationDrawerStructure = (props) => {
   //Structure for the navigatin Drawer
   const toggleDrawer = () => {
@@ -93,7 +94,10 @@ const Profile_User = ({navigation}) => {
           fontStyle:'normal'
       }}} />
       <Stack.Screen name="Profile" component={Profile} />
-       <Stack.Screen name ="Dangnhap" component={Dangnhap}/>
+       <Stack.Screen name ="Dangnhap" component={Dangnhap} options={{headerLeft:null}}/>
+       <Stack.Screen name ="Draw_Deatil_Profile" component={Draw_Deatil_Profile}/>
+       <Stack.Screen name ="DrawerContent" component={DrawerContent}/>
+       <Stack.Screen name ="Office" component={Office}/>
     </Stack.Navigator>
   );
 };

@@ -1,13 +1,13 @@
 import React from 'react';
 import {View,Text,TouchableOpacity,StyleSheet,Image} from 'react-native';
 
-const Draw_Detail_Profile = ()=>{
+const Draw_Detail_Profile = ({navigation})=>{
     return(
         <View style={styles.header}>
-            <View style={styles.left}>
+            <View style={styles.left}> 
                     <View style={styles.content}>
-                    <Image style={styles.tinyLogo}
-                    source={{ uri: 'https://scontent.fhan3-1.fna.fbcdn.net/v/t1.0-9/83040435_175874177153572_7388585565899194368_n.jpg?_nc_cat=102&ccb=2&_nc_sid=174925&_nc_ohc=CzyMQ9oPIVEAX9aEnEE&_nc_ht=scontent.fhan3-1.fna&oh=674b15ff9b646250e21d1b40829798db&oe=602C2A05' }} />
+                    <Image style={styles.tinyLogo} 
+                    source={{ uri: 'https://scontent.fhan2-1.fna.fbcdn.net/v/t1.0-9/83040435_175874177153572_7388585565899194368_n.jpg?_nc_cat=102&ccb=3&_nc_sid=174925&_nc_ohc=aBR7udIv6I4AX8WuHxC&_nc_ht=scontent.fhan2-1.fna&oh=5cdfcc615b5a1b7d1208c0605ab8b3dd&oe=60677D85' }} />
                         <Text style={styles.text}>Nguyễn Phương Nam</Text>
                     </View>
             </View>
